@@ -1,4 +1,5 @@
 import { filter, reduce, map, parseInt } from "lodash";
+import { setConstantValue } from "typescript";
 console.log(map([1, 2, 3], (a) => a * a));
 
 const input = `1962
@@ -209,11 +210,29 @@ const numbers = [1721, 979, 366, 299, 675, 1456];
 
 for (let i = 0; i < input.length; i++) {
   for (let j = i + 1; j < input.length; j++) {
-    if (input[i] + input[j] == 2020) {
-      console.log(
-        `here are the numbers: ${input[i]} and ${input[j]}, and score is `,
-        input[i] * input[j]
-      );
+    for(let k = j + 1; k < input.length; k++) {
+      if (input[i] + input[j] + input[k] == 2020) {
+        console.log(
+          `here are the numbers: ${input[i]}, ${input[j]} and ${input[k]}, and score is `,
+          input[i] * input[j] * input[k]
+        );
+      }
+    }
+    
+  }
+}
+
+for(let first of input) {
+  for(let second of input) {
+    for(let third of input) {
+      if(first + second + third == 2020) {
+        console.log(first*second*third)
+      }
     }
   }
 }
+
+
+
+
+
