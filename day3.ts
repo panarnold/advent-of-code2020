@@ -332,8 +332,8 @@ const input: string = `.........#..##..#..#........#..
 // }
 
 function howManyTrees(
-  coordinateX: number,
-  coordinateY: number,
+  goingRight: number,
+  goingDown: number,
   treeMap: string
 ): number {
   const lines = treeMap.trim().split("\n");
@@ -343,15 +343,15 @@ function howManyTrees(
   let count = 0;
 
   while (y < lines.length) {
-    const positionX = x % lines[0].length;
-    const actualPosition = lines[y][positionX];
+    const positionOnX = x % lines[0].length;
+    const actualPosition = lines[y][positionOnX];
 
     if (actualPosition === `#`) {
       count++;
     }
 
-    x += coordinateX;
-    y += coordinateY;
+    x += goingRight;
+    y += goingDown;
   }
 
   console.log("Number of trees on this map and on this course: ", count);
