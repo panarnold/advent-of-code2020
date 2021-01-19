@@ -1018,8 +1018,8 @@ function solutioon(input: string) {
       password[secondPosition - 1] === keyLetter;
 
     if (
-      (isAtFirstPosition === true && isAtSecondPosition === false) ||
-      (isAtFirstPosition === false && isAtSecondPosition === true)
+      (isAtFirstPosition && !isAtSecondPosition) ||
+      (!isAtFirstPosition && isAtSecondPosition)
     ) {
       return validPass + 1;
     }
