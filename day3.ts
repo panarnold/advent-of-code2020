@@ -338,8 +338,6 @@ function howManyTrees(
 ): number {
   const lines = treeMap.trim().split("\n");
 
-  console.log(lines);
-
   let x = 0;
   let y = 0;
   let count = 0;
