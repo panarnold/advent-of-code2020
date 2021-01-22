@@ -5,22 +5,21 @@ var input = ".........#..##..#..#........#..\n#...#..#..#...##.....##.##.#...\n.
 //   console.log(value);
 //   return value;
 // }
-function howManyTrees(coordinateX, coordinateY, treeMap) {
+function howManyTrees(goingRight, goingDown, treeMap) {
     var lines = treeMap.trim().split("\n");
-    console.log(lines);
     var x = 0;
     var y = 0;
     var count = 0;
     while (y < lines.length) {
-        var positionX = x % lines[0].length;
-        var actualPosition = lines[y][positionX];
+        var positionOnX = x % lines[0].length;
+        var actualPosition = lines[y][positionOnX];
         if (actualPosition === "#") {
             count++;
         }
-        x += coordinateX;
-        y += coordinateY;
+        x += goingRight;
+        y += goingDown;
     }
-    // console.log("Number of trees on this map and on this course: ", count);
+    console.log("Number of trees on this map and on this course: ", count);
     return count;
 }
 howManyTrees(3, 1, input);
@@ -35,4 +34,4 @@ var presets = [
 var finish = presets
     .map(function (preset) { return howManyTrees(preset[0], preset[1], input); })
     .reduce(function (sum, trees) { return sum * trees; }, 1);
-console.log(finish);
+console.log("Multiplied score is something like that: ", finish);
