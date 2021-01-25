@@ -10,6 +10,7 @@ import {
   endsWith,
   startsWith,
   includes,
+  isInteger,
 } from "lodash";
 
 const input: string = `iyr:2015

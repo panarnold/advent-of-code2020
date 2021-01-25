@@ -51,8 +51,12 @@ var VALIDATORS_ECL = [
 ];
 var VALIDATORS_PID = [
     function (value) { return value.length === 9; },
-    function (value) { return lodash_1.isNumber(parseInt(value)); },
+    function (value) {
+        return lodash_1.isNumber(parseInt(value.slice(0, 1))) && lodash_1.isNumber(parseInt(value.slice(1)));
+    },
 ];
+console.log(lodash_1.isNumber(parseInt("01234".slice(0, 1))) &&
+    lodash_1.isNumber(parseInt("01234".slice(1))));
 var VALIDATORS_HGT = [
     function (value) {
         return (lodash_1.endsWith(value, "cm") && isBetween(value.slice(0, -2), 150, 193)) ||
