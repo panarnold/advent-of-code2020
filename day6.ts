@@ -2280,6 +2280,7 @@ hxvcpy
 //part one
 
 const partOne = input
+  .trim()
   .split("\n\n")
   .map((answerGroup) => answerGroup.split(""))
   .map((answerGroup) => filter(answerGroup, (element) => element !== "\n"))

@@ -11,7 +11,6 @@ var partOne = input
     .reduce(function (sum, prev) { return prev + sum; }, 0);
 console.log(partOne);
 //part two
-var exampleInput = "abc\n\na\nb\nc\n\nab\nac\n\na\na\na\na\n\nb";
 var formList = input
     .trim()
     .split("\n\n")
