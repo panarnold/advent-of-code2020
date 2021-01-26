@@ -2290,22 +2290,6 @@ console.log(partOne);
 
 //part two
 
-const exampleInput = `abc
-
-a
-b
-c
-
-ab
-ac
-
-a
-a
-a
-a
-
-b`;
-
 let formList = input
   .trim()
   .split("\n\n")
